@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
@@ -18,7 +18,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Document("shorten_url")
-public class ShortenUrl {
+public class ShortenUrl implements Serializable {
 
     @Id
     private UUID id;

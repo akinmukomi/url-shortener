@@ -1,0 +1,26 @@
+version: "2"
+services:
+  url-shortener-service:
+    image: url-shortener
+    build: .
+    depends_on:
+      - url-shortener-mongodb
+      - url-shortener-redis
+    environment:
+      server.port: 8080
+      spring.data.mongodb.uri: mongodb://admin:admin@url-shortener-mongodb:27017/url-shortener-db?authSource=admin
+      spring.redis.host: url-shortener-redis
+    ports:
+      - 8080:8080
+  url-shortener-mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME : admin
+      MONGO_INITDB_ROOT_PASSWORD : admin
+      MONGO_INITDB_DATABASE : url-shortener-db
+    ports:
+      - 27017:27017
+  url-shortener-redis:
+    image: redis
+    ports:
+      - 6379:6379

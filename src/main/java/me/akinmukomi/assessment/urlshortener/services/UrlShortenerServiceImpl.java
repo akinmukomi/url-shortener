@@ -43,9 +43,7 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
                 .shortUrl(shortUniqueUrl)
                 .build();
 
-        if(shortenUrlRepository.save(shortenUrl) == null){
-            return UrlShortenResponse.builder().message("Unable to successfully generate a short url for "+request.getOriginalUrl()).build();
-        }
+        shortenUrlRepository.save(shortenUrl);
 
         return UrlShortenResponse.builder().shortUrl(shortUniqueUrl).message("Successfully generated a short url for "+request.getOriginalUrl()).build();
     }

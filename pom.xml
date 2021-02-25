@@ -30,10 +30,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,11 +43,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
         </dependency>
 
         <!-- Swagger -->
@@ -62,12 +59,6 @@
             <version>${swagger.version}</version>
             <scope>compile</scope>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>de.flapdoodle.embed</groupId>-->
-<!--            <artifactId>de.flapdoodle.embed.mongo</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -93,6 +84,7 @@
     </dependencies>
 
     <build>
+        <finalName>url-shortener</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
